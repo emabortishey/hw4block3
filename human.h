@@ -41,4 +41,11 @@ public:
 	char* get_g() { return Gender; }
 	int get_a() { return Age; }
 	char* get_r() { return Religion; }
+
+	~human()
+	{
+		delete[] Name;
+		delete[] Gender;
+		delete[] Religion;
+	}
 };
