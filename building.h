@@ -16,8 +16,10 @@ public:
 	{
 		cout << "\n¬ведите количество квартир в доме: ";
 		cin >> amount;
+		cin.ignore();
 		cout << "\n¬ведите номер дома: ";
 		cin >> number;
+		cin.ignore();
 		block = new flat[amount];
 	}
 

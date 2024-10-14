@@ -15,7 +15,6 @@ public:
 		Gender = new char[100];
 		Religion = new char[100];
 
-		cin.ignore();
 		cout << "\n¬ведите им€ человека: ";
 		gets_s(Name, 100);
 		cout << "\n¬ведите пол человека: ";

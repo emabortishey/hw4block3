@@ -16,8 +16,10 @@ public:
 	{
 		cout << "\n¬ведите количество людей проживающих в квартире: ";
 		cin >> amount;
+		cin.ignore();
 		cout << "\n¬ведите номер квартиры: ";
 		cin >> number;
+		cin.ignore();
 		apartament = new human[amount];
 	}
 
