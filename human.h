@@ -9,7 +9,24 @@ class human
 	char* Religion;
 public:
 
-	human() : human(0, 0, 0, 0) { }
+	human()
+	{ 
+		Name = new char[100];
+		Gender = new char[100];
+		Religion = new char[100];
+
+		cin.ignore();
+		cout << "\n¬ведите им€ человека: ";
+		gets_s(Name, 100);
+		cout << "\n¬ведите пол человека: ";
+		gets_s(Gender, 100);
+		cout << "\n¬ведите возраст человека: ";
+		cin >> Age;
+		cin.ignore();
+		cout << "\n¬ведите религию человека: ";
+		gets_s(Religion, 100);
+	
+	}
 
 	human(char* NameP) : human(NameP, 0, 0, 0) { }
 
