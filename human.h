@@ -7,8 +7,13 @@ class human
 	char* Gender;
 	int Age;
 	char* Religion;
-public:
 
+	//конструктор по умолчанию в каждом из классов запрашивает у пользователя данные для начального заполнения самостоятельно
+	// так как при передаче нулей при присваивании размера массиву через стрлен он не может считать ноль, а если сделать
+	// получаемые в конструкторе переменные константами и передавать строку "none" или типо того, то невозможно будет присвоить
+	// их переменным-динамическим массивам, так как не получится передать в динамический параметр константу (вродекак)
+
+public:
 	human()
 	{ 
 		Name = new char[100];
@@ -33,7 +38,7 @@ public:
 
 	human(char* NameP, char* GenderP, int AgeP) : human(NameP, GenderP, AgeP, 0) { }
 
-	human(char* NameP, char* GenderP, int AgeP, char* ReligionP) :
+	human(char* NameP, char* GenderP, int AgeP, char* ReligionP) : // строка у нас стрлен от переданной переменной +1 в каждом динамическом массиве ведь больше нам попросту не понадобится
 		Name{ new char[strlen(NameP) + 1] { *NameP } },
 		Gender{ new char[strlen(GenderP) + 1] { *GenderP } },
 		Age{ AgeP },
@@ -55,7 +60,7 @@ public:
 
 	char* get_n() { return Name; }
 	char* get_g() { return Gender; }
-	int get_a() { return Age; }
+	int& get_a() { return Age; }
 	char* get_r() { return Religion; }
 
 	~human()
